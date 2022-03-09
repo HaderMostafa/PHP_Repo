@@ -3,9 +3,9 @@
 
 <head>
     <title>Login Php</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Views/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Views/css/all.min.css">
+    <link rel="stylesheet" href="Views/style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     
 </head>
@@ -45,7 +45,7 @@
                 <!-- <button type="submit" class="btn btn-danger " name="submit">Sign In</button><br> -->
                 <a class="ancorPage" href="register.php" >Sign Up</a>
             </form>
-            <?php require_once('validationForm.php') ; ?>
+            <?php require_once('login_logic.php') ; ?>
         </section>
     </div>
 

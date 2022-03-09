@@ -3,9 +3,9 @@
 
 <head>
     <title>Payment Php</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Views/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Views/css/all.min.css">
+    <link rel="stylesheet" href="Views/style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     
 </head>
@@ -18,7 +18,7 @@
             <h4>Please fill out the form if you don't have any account to view our products .</h4>
             <p>you are buying an online . it will be added to your profile and can buying online anytime
                 , on my device , at shopping online .com .</p>
-            <img class="imgCard" src="debit-card.png" style="height: 200px; margin : 30px 70px  ;" />
+            <img class="imgCard" src="Views/debit-card.png" style="height: 200px; margin : 30px 70px  ;" />
         </header>
         <section class="FormParent">
             <form class="container" action="#" method="POST">
@@ -59,11 +59,11 @@
                     <label class="form-check-label" for="exampleCheck1">Rememeber Me</label>
                 </div> -->
                 <button type="submit" class="btn btn-primary styleSubmit" name="submit">Buy</button>
-                <img class="visa" src="visa.png" style="height: 90px;"/>
+                <img class="visa" src="Views/visa.png" style="height: 90px;"/>
                 
                 <!-- <a class="ancorPage" href="login.php" >Login</a> -->
             </form>
-            <?php require_once('validationRegister.php') ; ?>
+            <?php require_once('payment_logic.php') ; ?>
         </section>
     </div>
 

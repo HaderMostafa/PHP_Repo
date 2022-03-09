@@ -10,7 +10,7 @@ Connect::connectDatabase();
 
 require_once "Views/login.php";
 
-//require_once "Views/login.php";
+//require_once "Views/payment.php";
 
 //require_once "Views/download_area.php";
 
