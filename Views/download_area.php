@@ -1,11 +1,12 @@
+<?php require_once "../vendor/autoload.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>Download Page</title>
-    <link rel="stylesheet" href="Views/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Views/css/all.min.css">
-    <link rel="stylesheet" href="Views/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
 </head>

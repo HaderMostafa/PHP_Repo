@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     
 </head>
-
+<?php require_once('payment_logic.php') ; ?>
 <body>
     <div class="parent">
         <header class="headerForm">
@@ -25,32 +25,39 @@
 
                 <div class="styleInput">
                     <label for="name"> Username :</label>
-                    <input class="form-control" type="text" placeholder="Enter Your Name " name="name">
+                    <input class="form-control" type="text" value="<?php if(count($nameErr) == 0) echo $name ;?>" placeholder="Enter Your Name " name="name">
+                    <span class="error"><?php  foreach($nameErr as $line) {echo "$line</br>" ;}?> </span></br>
                 </div>
 
                 <div class="styleInput">
                     <label for="email"> Email :</label>
-                    <input class="form-control" type="text" placeholder="Enter Your Email " name="email">
+                    <input class="form-control" type="text" value="<?php if($emailErr=="") echo $email; ?>"  placeholder="Enter Your Email " name="email">
+                    <span class="error"><?php echo $emailErr; ?> </span></br>
+                    
                 </div>
 
                 <div class="styleInput">
                     <label for="password"> Password :</label>
-                    <input class="form-control" type="password" placeholder="Enter Your Password " name="password">
+                    <input class="form-control" type="password" value="<?php if(count($passwordErr) == 0) echo $password ;?>"placeholder="Enter Your Password " name="password">
+                    <span class="error"><?php  foreach($passwordErr as $line) {echo " $line</br>" ;}?> </span></br>
                 </div>
 
                 <div class="styleInput">
                     <label for="repeatPassword"> Confirm Password :</label>
-                    <input class="form-control" type="password" placeholder="Enter Return Password " name="repeatPassword">
+                    <input class="form-control" type="password" value="<?php if($passwordEqual=="") echo $repeatedPassword; ?>"placeholder="Enter Return Password " name="repeatPassword">
+                    <span class="error"><?php echo $passwordEqual; ?> </span></br>
                 </div>
 
                 <div class="styleInput">
                     <label for="creditCard"> Credit Number :</label>
-                    <input class="form-control" type="number" placeholder="Enter Credit Number " name="creditCard">
+                    <input class="form-control" type="number" value="<?php if($creditErr=="") echo $creditNumber; ?>"  placeholder="Enter Credit Number " name="creditCard">
+                    <span class="error"><?php echo $creditErr; ?> </span></br>
                 </div>
 
                 <div class="styleInput">
                     <label for="expirationCard"> Credit Expiration date :</label>
-                    <input class="form-control" type="date" placeholder="Enter Expiration date " name="expirationCard">
+                    <input class="form-control" type="date"value="<?php if($expireErr=="") echo $expireDate; ?>" placeholder="Enter Expiration date " name="expirationCard">
+                    <span class="error"><?php echo $expireErr; ?> </span></br>
                 </div>
 
 
@@ -63,11 +70,11 @@
                 
                 <!-- <a class="ancorPage" href="login.php" >Login</a> -->
             </form>
-            <?php require_once('payment_logic.php') ; ?>
+            
         </section>
     </div>
 
-
+    
 
 </body>
 

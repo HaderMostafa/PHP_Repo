@@ -1,3 +1,7 @@
+<?php require_once "../vendor/autoload.php";
+require_once('login_logic.php') ; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +13,8 @@
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     
 </head>
+
+
 
 <body>
     <div class="parent">
@@ -24,17 +30,20 @@
 
                 <div class="styleInput">
                     <label for="name"> Username :</label>
-                    <input class="form-control" type="text" placeholder="Enter Your Name " name="name">
+                    <input class="form-control" type="text"value="<?php if(count($nameErr) == 0) echo $name ;?>" placeholder="Enter Your Name " name="name">
+                    <span class="error"><?php  foreach($nameErr as $line) {echo "$line</br>" ;}?> </span></br>
                 </div>
 
                 <div class="styleInput">
                     <label for="email"> Email :</label>
-                    <input class="form-control" type="text" placeholder="Enter Your Email " name="email">
+                    <input class="form-control" type="text"value="<?php if($emailErr=="") echo $email; ?>" placeholder="Enter Your Email " name="email">
+                    <span class="error"><?php echo $emailErr; ?> </span></br>
                 </div>
 
                 <div class="styleInput">
                     <label for="password"> Password :</label>
-                    <input class="form-control" type="password" placeholder="Enter Your Password " name="password">
+                    <input class="form-control" type="password" value="<?php if(count($passwordErr) == 0) echo $password ;?>"placeholder="Enter Your Password " name="password">
+                    <span class="error"><?php  foreach($passwordErr as $line) {echo " $line</br>" ;}?> </span></br>
                 </div>
 
                 <div class="form-check">
@@ -43,7 +52,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary styleSubmit" name="submit">Login</button><br>
             </form>
-            <?php require_once('login_logic.php') ; ?>
+            
         </section>
     </div>
 
