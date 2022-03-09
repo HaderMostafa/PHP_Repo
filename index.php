@@ -8,11 +8,11 @@ use Illuminate\Database\Capsule\Manager as Database;
 
 Connect::connectDatabase();
 
-require_once "Views/login.php";
+//require_once "Views/login.php";
 
 //require_once "Views/payment.php";
 
-//require_once "Views/download_area.php";
+require_once "Views/download_area.php";
 
 //require_once "Views/download_info.php";
 

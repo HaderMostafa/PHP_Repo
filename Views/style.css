@@ -56,3 +56,34 @@ h1, h2, h4{
     /* background-color:red ; */
     
 }
+/* added */
+.error {
+    color: #FF0001;
+}
+
+.valid {
+    color: green
+}
+
+.styleBack {
+    background-color: #4300ff !important;
+    border-color: #6196ed !important;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+.styleBuy {
+    background-color: orangered !important;
+    border-color: orangered !important;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 300px;
+} 
+.styleEdit {
+    background-color: green !important;
+    border-color: green !important;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
