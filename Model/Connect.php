@@ -3,13 +3,11 @@ use Illuminate\Database\Capsule\Manager as Database;
 
 class Connect
 {
-
-    // to connect to DB
-    public static function connectDatabase()
+    public function __construct()
     {
-        $database = new Database;
+        $this->database = new Database;
 
-        $database->addConnection([
+        $this->database->addConnection([
             "driver" => Driver,
             "host" => Host,
             "database" => Database,
@@ -17,16 +15,13 @@ class Connect
             "password" => Password,
         ]);
         
-        $database->setAsGlobal();
-        $database->bootEloquent();
-
+        $this->database->setAsGlobal();
+        $this->database->bootEloquent();
     }
-
-    //INSERT TO DATABASE FROM PAYMENT PAGE
-    public static function get_login_data()
-    {
-        $obj = Database::table("user")->get();
-        var_dump($obj);
-    }
+public function data($table)
+{
+    return Database::table($table);
+    
+}
 
 }

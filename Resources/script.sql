@@ -45,8 +45,8 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `count` int(11) NOT NULL,
   FOREIGN KEY (`userid`) references user(uid),
   FOREIGN KEY (`productid` ) references product (pid),
-  PRIMARY KEY (`oid`,`userid`)
+  PRIMARY KEY (`oid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
-INSERT INTO `orders` (`oid` ,  `userid` ,  `productid` , `date` ,`count`)VALUES
-	('1', '1', '1' ,'2018-08-28 22:52:14', '1');
+INSERT INTO `orders` (`userid` ,  `productid` , `date` ,`count`)VALUES
+	('1', '1' ,'2018-08-28 22:52:14', '1');

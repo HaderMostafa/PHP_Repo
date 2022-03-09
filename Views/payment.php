@@ -50,7 +50,7 @@
 
                 <div class="styleInput">
                     <label for="expirationCard"> Credit Expiration date :</label>
-                    <input class="form-control" type="number" placeholder="Enter Expiration date " name="expirationCard">
+                    <input class="form-control" type="date" placeholder="Enter Expiration date " name="expirationCard">
                 </div>
 
 

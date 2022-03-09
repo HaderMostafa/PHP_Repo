@@ -41,11 +41,8 @@ if (isset($_POST['submit'])) {
     foreach($errors as $error){
         "<p class='pError'>".print_r($error)."</p>";
     }
-
-    // for($i=0; $i<count($errors); $i++)
-    // {
-    //     "<p>".print_r($errors[$i])."</p>";
-    // }
+    
 }
+?>
 
 

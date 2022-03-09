@@ -1,6 +1,7 @@
 <?php
-
+// use Illuminate\Database\Capsule\Manager as Database;
 if (isset($_POST['submit'])) {
+
     $username = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -48,8 +49,12 @@ if (isset($_POST['submit'])) {
         "<p class='pError'>".print_r($error)."</p>";
     }
 
-    // for($i=0; $i<count($errors); $i++)
-    // {
-    //     "<p>".print_r($errors[$i])."</p>";
-    // }
+    $user = new UserConnection;
+    if(empty($errors)){
+  
+    $user->insert_data($username,$email,$password);
+    header("Location: http://localhost/php_project/PHP_Repo/Views/login.php");
 }
+  
+}
+?>
