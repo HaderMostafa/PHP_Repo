@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>Product Page</title>
-    <link rel="stylesheet" href="Views/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Views/css/all.min.css">
-    <link rel="stylesheet" href="Views/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -28,8 +29,8 @@
             <form class="container" action="#" method="POST">
                 <input type="text" class="" name="product">Product Name</input><br>
                 <input type="text" class="" name="size">Size </input><br>
-                <a href="#" class="" name="link">Hyperlink</a><br>
-
+                <a href="download_logic.php" target="_blank" class="" name="link"  >Hyperlink</a><br>
+                <!-- <a href="after_download.php" target="_blank" class="" name="link" >Hyperlink</a><br>  -->
             </form>
 
         </section>
@@ -40,3 +41,17 @@
 </body>
 
 </html>
+
+
+
+
+<?php
+// $GLOBALS['flag'] = true;
+
+//     echo $GLOBALS['flag'];
+$flag=true;
+$index=1;
+// $_SESSION['flag2']=true;
+if(isset($_POST['link'])){require_once('download_logic.php');}
+
+?> 

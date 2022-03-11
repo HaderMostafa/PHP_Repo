@@ -44,4 +44,11 @@ public function check_login($username,$email,$password)
 
   
 }
+
+
+public function select($col,$value,$equval)
+{
+    return  $this->table->where($col,"=",$value)->value($equval);
+    
+}
 }

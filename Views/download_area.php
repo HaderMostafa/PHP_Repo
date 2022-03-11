@@ -25,9 +25,9 @@
         <section class="FormParent">
             <form class="container" action="#" method="POST">
 
-                <button type="button" class="btn btn-primary styleBack" name="download">Download </button><br>
-                <button type="button" class="btn btn-primary styleBack" name="edit">Edit Profile</button><br>
-                <button type="button" class="btn btn-primary styleBack" name="logout">Log Out</button><br>
+                <button type="button" class="btn btn-primary styleBack" name="download"><a href="download_info.php" class="" name="link"  >Download</a> </button><br>
+                <button type="button" class="btn btn-primary styleBack" name="edit"><a href="edit_profile.php" class="" name="link"  >Edit profile</a></button><br>
+                <button type="button" class="btn btn-primary styleBack" name="logout"><a href="login.php" class="" name="link"  >Logout</a></button><br>
 
             </form>
 
