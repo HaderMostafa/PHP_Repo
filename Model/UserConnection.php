@@ -51,4 +51,16 @@ public function select($col,$value,$equval)
     return  $this->table->where($col,"=",$value)->value($equval);
     
 }
+
+// checks if email is used before 
+public function check_used_before($email){
+    $email_exists= $this->table->where('email',"=",$email)->exists();
+    if($email_exists==true){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
 }

@@ -121,8 +121,18 @@ if(empty($_POST["expirationCard"])){
         if(isset($_POST['submit'])) {  
         if(count($nameErr) == 0 && $emailErr == "" && count($passwordErr)== 0 && $passwordEqual==""&&$creditErr==""&$expireErr=="") {  
             $user = new UserConnection;
-             $user->insert_data($name,$email,$password);
-            header("Location: http://localhost/php_project/PHP_Repo/Views/login.php");
+            $check_result=$user->check_used_before($email);
+            
+            if($check_result==true){
+                $emailErr="Email used before please enter another one ";
+            }else{
+                $user->insert_data($name,$email,$password);
+                header("Location: http://localhost/project_trial/Views/login.php");
+            }
+            
+
+           
+          //  $_SESSION['payment_done']=true;
            
          }  
         
