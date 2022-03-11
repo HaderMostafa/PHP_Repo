@@ -86,14 +86,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     
        
+       
         if(isset($_POST['submit'])) {  
-        if(count($nameErr) == 0 && $emailErr == "" && count($passwordErr)== 0) {  
-            header("Location: http://localhost/php_project/PHP_Repo/Views/download_area.php");
-              }  
-        
-        }  
-
-
+            if(count($nameErr) == 0 && $emailErr == "" && count($passwordErr)== 0) {  
+               // header("Location: http://localhost/php_project/PHP_Repo/Views/download_area.php");
+               //check if a user exists 
+               $user = new UserConnection;
+              $check_result= $user->check_login($name,$email,$password);
+              if($check_result==true){
+                 echo "success";
+              }else{
+                   echo "fail";
+              }
+              }
+                  }  
+            
+              
 
 
 

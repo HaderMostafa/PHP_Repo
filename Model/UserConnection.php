@@ -24,4 +24,24 @@ public function insert_data($username,$email,$password)
         echo $th->getMessage();
     }
 }
+
+
+
+
+public function check_login($username,$email,$password)
+{
+    $passhashed=sha1($password);
+    
+       $username_exixts= $this->table->where('uname',"=",$username)->exists();
+       $email_exixts= $this->table->where('email',"=",$email)->exists();
+       $password_exixts= $this->table->where('pass',"=",$passhashed)->exists();
+       if ($username_exixts &&$email_exixts &&$password_exixts ){
+           return true;
+        
+       }else{
+           return false;
+       }
+
+  
+}
 }
