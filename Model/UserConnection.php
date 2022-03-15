@@ -61,4 +61,13 @@ class UserConnection
     }
     //*********************************************************************
 
+    //************************************************** */
+    public function update_data($id, $email, $password)
+    {
+        $passhashed = sha1($password);
+        $this->table->where('uid', $id)->update(['email' => "$email"]);
+        // $this->table->where('uid', '=', '$id')->update(['pass' => $passhashed]);
+    }
+    //************************************************** */
+
 }

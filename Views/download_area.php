@@ -1,19 +1,26 @@
 <?php
-session_start(); //added by hadeer**********************************************************
+session_start();
 require_once "../vendor/autoload.php";
 
-// if (){
+if (isset($_POST['download'])) {
 
-// }
-//var_dump($_COOKIE);
-//var_dump(isset($_COOKIE["Token"]));
-// var_dump($_POST); //??????????????now
-// var_dump($_SESSION); //added by hadeer**********************************************************
-// echo "<br>";
-// echo "welcome ya hadeer"; //added by hadeer**********************************************************
-// echo "<br>";
-// var_dump($_COOKIE); //added by hadeer**********************************************************
-// $_SESSION['is_logged'] = false;
+    header("Location: http://localhost/iti/PHP_Repo/Views/download_info.php"); //changable
+
+} else if (isset($_POST['edit'])) {
+
+    header("Location: http://localhost/iti/PHP_Repo/Views/edit_profile.php"); //changable
+
+} else if (isset($_POST['logout'])) {
+
+    //destroy session
+    session_destroy();
+
+    //destroy cookie
+    setcookie('Token', "", time() - 3600);
+
+    header("Location: http://localhost/iti/PHP_Repo/Views/login.php"); //changable
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +46,9 @@ require_once "../vendor/autoload.php";
         <section class="FormParent">
             <form class="container" action="#" method="POST">
 
-                <button type="button" class="btn btn-primary styleBack" name="download"><a href="download_info.php"
-                        class="" name="link">Download</a> </button><br>
-                <button type="button" class="btn btn-primary styleBack" name="edit"><a href="edit_profile.php" class=""
-                        name="link">Edit profile</a></button><br>
-                <button type="button" class="btn btn-primary styleBack" name="logout"><a href="login.php" class=""
-                        name="link">Logout</a></button><br>
+                <button type="submit" class="btn btn-primary styleBack" name="download"> Download</button><br>
+                <button type="submit" class="btn btn-primary styleBack" name="edit">Edit Profile</button><br>
+                <button type="submit" class="btn btn-primary styleBack" name="logout">Log out</button><br>
             </form>
         </section>
     </div>

@@ -1,9 +1,12 @@
 <?php
+
+session_start();
+require_once "../vendor/autoload.php";
+
 // $GLOBALS['flag'] = true;
 
 //     echo $GLOBALS['flag'];
-session_start(); //added by hadeer**********************************************************
-require_once "../vendor/autoload.php";
+
 $flag = true;
 $index = 1;
 // $_SESSION['flag2']=true;
@@ -23,8 +26,6 @@ if (isset($_POST['link'])) {require_once 'download_logic.php';}
 
 </head>
 <style>
-
-
 
 </style>
 

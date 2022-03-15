@@ -1,3 +1,5 @@
+<?php require_once 'payment_logic.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,6 @@
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
 </head>
-<?php require_once 'payment_logic.php';?>
 
 <body>
     <div class="parent">
@@ -78,15 +79,11 @@
 ?>" placeholder="Enter Expiration date " name="expirationCard">
                     <span class="error"><?php echo $expireErr; ?> </span></br>
                 </div>
-
-                <!-- <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Rememeber Me</label>
-                </div> -->
                 <button type="submit" class="btn btn-primary styleSubmit" name="submit">Buy</button>
                 <img class="visa" src="Views/visa.png" style="height: 90px;" />
 
-                <!-- <a class="ancorPage" href="login.php" >Login</a> -->
+                <!-- done -->
+                <a class="ancorPage" href="Views/login.php">Login</a>
             </form>
 
         </section>

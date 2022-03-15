@@ -4,12 +4,7 @@ session_start();
 // session_start(); //added by hadeer***
 require_once "vendor/autoload.php";
 
-//************************************************************************************************* Hadeer&Dina
-// if (isset($_COOKIE["Token"])) {
-//     echo "lol";
-//     die();
-// }
-
+//*************************************************************************************************
 if (isset($_COOKIE["Token"]) || isset($_SESSION['is_logged'])) {
 /*
 if (isset($_COOKIE["Token"])) {
@@ -41,7 +36,3 @@ $token->insert_data($id, $user_token);
     require_once "Views/payment.php";
 }
 //*************************************************************************************************
-//use Illuminate\Database\Capsule\Manager as Database;
-//require_once "Views/download_area.php";
-//require_once "Views/download_info.php";
-//require_once "Views/edit_profile.php";

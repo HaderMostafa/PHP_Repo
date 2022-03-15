@@ -2,6 +2,7 @@
 session_start();
 require_once "../vendor/autoload.php";
 require_once 'edit_profile_logic.php';
+
 ?>
 
 <html>
@@ -26,35 +27,37 @@ require_once 'edit_profile_logic.php';
         <section class="FormParent">
             <form class="container" action="#" method="POST">
                 <div class="styleInput">
+                    <!-- email -->
                     <label for="email"> Edit Email :</label>
-                    <input class="form-control" type="text" value="<?php if ($emailErr == "") {
-    echo $email;
-}
-?>" placeholder="Edit Your Email " name="email">
+                    <input class="form-control" type="text"
+                        value="<?php if (isset($_POST['submitEdit'])) {echo $_SESSION['email'];}?>"
+                        placeholder="Edit Your Email " name="email">
+                    <!-- error -->
                     <span class="error"><?php echo $emailErr; ?> </span></br>
                 </div>
 
                 <div class="styleInput">
+                    <!-- password -->
                     <label for="password">Edit password :</label>
-                    <input class="form-control" type="password" value="<?php if (count($passwordErr) == 0) {
-    echo $password;
-}
-?>" placeholder="Edit Your Password " name="password">
+                    <input class="form-control" type="password" value="" placeholder="Edit Your Password "
+                        name="password">
+                    <!-- error -->
                     <span class="error"><?php foreach ($passwordErr as $line) {echo "$line</br>";}?> </span></br>
 
                 </div>
 
                 <div class="styleInput">
+                    <!-- confirm password -->
                     <label for="repeatPassword"> Confirm Password :</label>
-                    <input class="form-control" type="password" value="<?php if ($passwordEqual == "") {
-    echo $repeatedPassword;
-}
-?>" placeholder="Re-enter Your Password" placeholder="Enter Re-enter Password " name="repeatPassword">
+                    <input class="form-control" type="password" value="" placeholder="Re-enter Your Password"
+                        placeholder="Enter Re-enter Password " name="repeatPassword">
+                    <!-- error -->
                     <span class="error"><?php echo $passwordEqual; ?> </span></br>
                 </div>
 
-                <button type="submit" class="btn btn-primary styleSubmit" name="submit">Save Changes</button><br>
-                <button type="button" class="btn btn-primary styleBack" name="back">Back to download </button><br>
+                <button type="submit" class="btn btn-primary styleSubmit" name="submit">Save Changes</button>
+                <button type="submit" class="btn btn-warning " name="submitEdit">Update</button><br>
+                <button type="submit" class="btn btn-primary styleBack" name="back">Back to download </button><br>
             </form>
 
 </body>
