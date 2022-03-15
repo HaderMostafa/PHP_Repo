@@ -1,6 +1,12 @@
 <?php
 session_start(); //added by hadeer**********************************************************
 require_once "../vendor/autoload.php";
+
+// if (){
+
+// }
+//var_dump($_COOKIE);
+//var_dump(isset($_COOKIE["Token"]));
 // var_dump($_POST); //??????????????now
 // var_dump($_SESSION); //added by hadeer**********************************************************
 // echo "<br>";

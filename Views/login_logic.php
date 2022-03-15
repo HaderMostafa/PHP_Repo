@@ -78,10 +78,11 @@ if (isset($_POST['submit'])) {
         $check_result = $user->check_login($name, $email, $password);
         if ($check_result == true) {
 
-            //**************************************************************************** 
+            //****************************************************************************
+
             if (isset($_POST['remember_me'])) {
                 $tContent = "abcdefgh" . rand(0, 9999999) . "ijklmnop" . rand(0, 9999999) . "qrstuvxy"; //8+8+8+7*2 (38 char.)
-                setcookie("Token", $tContent);
+                setcookie("Token", $tContent, 2147483647, '/'); ///
 
                 // var_dump($_COOKIE);
                 // echo "<br>";
@@ -106,12 +107,12 @@ if (isset($_POST['submit'])) {
                 $_SESSION['user_id'] = $id;
             }
             //****************************************************************************
-            echo "success";
+            //echo "success";
             $_SESSION['is_logged'] = true; //added for test
 
             header("Location: http://localhost/iti/PHP_Repo/Views/download_area.php"); //changable
         } else {
-            echo "fail";
+            //echo "fail";
         }
     }
 }

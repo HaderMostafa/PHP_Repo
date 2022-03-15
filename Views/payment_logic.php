@@ -115,6 +115,7 @@ if (isset($_POST['submit'])) {
             $emailErr = "Email used before please enter another one ";
         } else {
             $user->insert_data($name, $email, $password);
+            //session
             header("Location: http://localhost/iti/PHP_Repo/Views/login.php"); //changable
         }
     }
