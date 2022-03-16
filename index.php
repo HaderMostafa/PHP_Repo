@@ -1,38 +1,33 @@
 <?php
 session_start();
-// session_destroy(); //added by hadeer***
-// session_start(); //added by hadeer***
 require_once "vendor/autoload.php";
 
-//*************************************************************************************************
-if (isset($_COOKIE["Token"]) || isset($_SESSION['is_logged'])) {
-/*
-if (isset($_COOKIE["Token"])) {
-//return old token and get uid from db
+if (isset($_COOKIE["remember_me"]) || isset($_SESSION['is_logged'])) {
 
-//set new token
-$tContent = "abcdefgh" . rand(0, 9999999) . "ijklmnop" . rand(0, 9999999) . "qrstuvxy"; //8+8+8+7*2 (38 char.)
-setcookie("Token", $tContent, 2147483647, '/'); ///
+    if (isset($_COOKIE["remember_me"])) {
 
-// // database and session
-// $user = new UserConnection;
-// $id = $user->get_data($email);
-// $_SESSION['user_id'] = $id;
-// $_SESSION['token_added'] = true;
+        // using current token contact with db and get user id
+        $token = new TokenConnection;
+        $id = $token->get_id($_COOKIE["remember_me"]);
+        $_SESSION['user_id'] = $id; //set variable in session
 
-//update token in DB
-$user_token = $_COOKIE['Token'];
-$token = new TokenConnection;
-$token->insert_data($id, $user_token);
+        //add userid in session and email in session >>> jump download >>>can enter edit profile >>>need variables in session
+        // database and session
+        $user = new UserConnection;
+        $email = $user->get_email($id);
+        $_SESSION['email'] = $email;
 
-}*/
+        //set new token
+        $value = uniqid(time(), true); //to generate unique token
+        setcookie("remember_me", $value, time() + 2 * 24 * 60 * 60, '/');
 
-    header("Location: http://localhost/iti/PHP_Repo/Views/download_area.php"); //changable
-    //require_once "Views/download_area.php";
-//     if (){
-//         //update Token and save in DB
-// }
+        //update token in DB
+        $token = new TokenConnection;
+        $token->update_data($id, $value);
+    }
+
+    header("Location:" . download_area_url); //changable
+
 } else {
     require_once "Views/payment.php";
 }
-//*************************************************************************************************

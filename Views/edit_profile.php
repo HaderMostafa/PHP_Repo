@@ -30,7 +30,7 @@ require_once 'edit_profile_logic.php';
                     <!-- email -->
                     <label for="email"> Edit Email :</label>
                     <input class="form-control" type="text"
-                        value="<?php if (isset($_POST['submitEdit'])) {echo $_SESSION['email'];}?>"
+                        value="<?php if (isset($_POST['update'])) {echo $_SESSION['email'];}?>"
                         placeholder="Edit Your Email " name="email">
                     <!-- error -->
                     <span class="error"><?php echo $emailErr; ?> </span></br>
@@ -55,9 +55,9 @@ require_once 'edit_profile_logic.php';
                     <span class="error"><?php echo $passwordEqual; ?> </span></br>
                 </div>
 
-                <button type="submit" class="btn btn-primary styleSubmit" name="submit">Save Changes</button>
-                <button type="submit" class="btn btn-warning " name="submitEdit">Update</button><br>
-                <button type="submit" class="btn btn-primary styleBack" name="back">Back to download </button><br>
+                <button type="submit" class="btn btn-primary styleSubmit" name="save">Save Changes</button>
+                <button type="submit" class="btn btn-warning " name="update">Update</button><br>
+                <button type="submit" class="btn btn-primary styleBack" name="back">Back to download</button><br>
             </form>
 
 </body>

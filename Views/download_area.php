@@ -4,21 +4,29 @@ require_once "../vendor/autoload.php";
 
 if (isset($_POST['download'])) {
 
-    header("Location: http://localhost/iti/PHP_Repo/Views/download_info.php"); //changable
+    header("Location:" . download_info_url); //changable
 
 } else if (isset($_POST['edit'])) {
 
-    header("Location: http://localhost/iti/PHP_Repo/Views/edit_profile.php"); //changable
+    header("Location:" . edit_profile_url); //changable
 
 } else if (isset($_POST['logout'])) {
 
     //destroy session
     session_destroy();
 
-    //destroy cookie
-    setcookie('Token', "", time() - 3600);
+    if (isset($_COOKIE["remember_me"])) {
 
-    header("Location: http://localhost/iti/PHP_Repo/Views/login.php"); //changable
+        // remove record from db
+        $token = new TokenConnection;
+        $num = $token->delete_record($_COOKIE["remember_me"]);
+
+        //destroy cookie in browser
+        unset($_COOKIE["remember_me"]);
+        setcookie("remember_me", "", -1, '/');
+    }
+
+    header("Location:" . login_url); //changable
 }
 
 ?>

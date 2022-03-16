@@ -53,21 +53,23 @@ class UserConnection
             return false;
         }
     }
-//********************************************************************
+
     public function get_data($email)
     {
         $opposite_id = $this->table->where('email', "=", $email)->value('uid');
         return $opposite_id;
     }
-    //*********************************************************************
 
-    //************************************************** */
     public function update_data($id, $email, $password)
     {
         $passhashed = sha1($password);
         $this->table->where('uid', $id)->update(['email' => "$email"]);
-        // $this->table->where('uid', '=', '$id')->update(['pass' => $passhashed]);
+        $this->table->where('uid', $id)->update(['pass' => $passhashed]);
     }
-    //************************************************** */
 
+    public function get_email($id)
+    {
+        $opposite_email = $this->table->where('uid', "=", $id)->value('email');
+        return $opposite_email;
+    }
 }
