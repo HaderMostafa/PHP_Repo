@@ -37,4 +37,29 @@ public function insert_order($userid,$productid,$date,$count)
         echo $th->getMessage();
     }
 }
+
+
+
+public function update_order($userid,$new_date,$new_count){
+
+    $this->table ->where('userid', $userid)->update(['date' => "$new_date" , 'count' => "$new_count"]);        
+}
+
+
+
+public function get_count($userid)
+    {
+        $count = $this->table->where('userid', "=", $userid)->value('count');
+        return $count;
+    }
+
+
+
+    public function get_userId($userid)
+    {
+        $excit_userid = $this->table->where('userid', "=", $userid)->value('userid');
+        return $excit_userid;
+    }   
+
+
 }

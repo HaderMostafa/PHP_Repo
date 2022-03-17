@@ -2,7 +2,7 @@
 session_start();
 require_once "vendor/autoload.php";
 
-if (isset($_COOKIE["remember_me"]) || isset($_SESSION['is_logged'])) {
+if (isset($_COOKIE["remember_me"]) || isset($_SESSION['user_id'])) {
 
     if (isset($_COOKIE["remember_me"])) {
 
@@ -24,6 +24,11 @@ if (isset($_COOKIE["remember_me"]) || isset($_SESSION['is_logged'])) {
         //update token in DB
         $token = new TokenConnection;
         $token->update_data($id, $value);
+    }else{
+        $id=$_SESSION['user_id'] ;
+        $user = new UserConnection;
+        $email = $user->get_email($id);
+        $_SESSION['email'] = $email;
     }
 
     header("Location:" . download_area_url); //changable

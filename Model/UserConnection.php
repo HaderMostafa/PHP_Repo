@@ -60,6 +60,8 @@ class UserConnection
         return $opposite_id;
     }
 
+
+    //For edit profile
     public function update_data($id, $email, $password)
     {
         $passhashed = sha1($password);
