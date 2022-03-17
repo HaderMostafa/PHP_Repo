@@ -51,7 +51,7 @@ if (isset($_POST['download'])) {
             <p>you are buying an online . it will be added to your profile and can buying online anytime
                 , on my device , at shopping online .com .</p>
         </header>
-        <section class="FormParent">
+        <section class="FormParent " style="display:flex; align-items:center; height: 320px;">
             <form class="container" action="#" method="POST">
 
                 <button type="submit" class="btn btn-primary styleBack" name="download"> Download</button><br>
@@ -59,7 +59,11 @@ if (isset($_POST['download'])) {
                 <button type="submit" class="btn btn-primary styleBack" name="logout">Log out</button><br>
             </form>
         </section>
+        <div>
+         <img style="position: absolute; top: 370px; left: 48%;" src="downloadImg.jpg" alt="download" />
+        </div>
     </div>
+    
 </body>
 
 </html>

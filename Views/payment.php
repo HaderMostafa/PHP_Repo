@@ -21,6 +21,9 @@
             <p>you are buying an online . it will be added to your profile and can buying online anytime
                 , on my device , at shopping online .com .</p>
             <img class="imgCard" src="Views/debit-card.png" style="height: 200px; margin : 30px 70px  ;" />
+            <div style="display:flex; justify-content:end">
+                    <img class="visa" src="Views/visa.png" style="height: 90px;" />
+            </div>
         </header>
         <section class="FormParent">
             <form class="container" action="#" method="POST">
@@ -79,11 +82,13 @@
 ?>" placeholder="Enter Expiration date " name="expirationCard">
                     <span class="error"><?php echo $expireErr; ?> </span></br>
                 </div>
-                <button type="submit" class="btn btn-primary styleSubmit" name="submit">Buy</button>
-                <img class="visa" src="Views/visa.png" style="height: 90px;" />
+                
 
                 <!-- done -->
-                <a class="ancorPage" href="Views/login.php">Login</a>
+                <button type="submit" class="btn btn-primary styleSubmit" name="submit">Buy</button>
+                <a class="ancorPage" href="Views/login.php" style="color: black">Login</a>
+
+
             </form>
 
         </section>

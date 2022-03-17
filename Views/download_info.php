@@ -38,12 +38,19 @@ $oldfname=$product-> get_data();
 
             <p>you are buying an online . it will be added to your profile and can buying online anytime
                 , on my device , at shopping online .com .</p>
+            <img style="width:480px" src="Capture.jpg" alt="Capture" />
         </header>
         <section class="FormParent">
             <form class="container" action="#" method="POST">
-                <input type="text" class="" name="product">Product Name</input><br>
-                <input type="text" class="" name="size">Size </input><br>
-                <a href="<?php  echo $oldfname.".php" ?>"  class="" name="link">Hyperlink</a><br>
+                <div style="padding:15px 0px ">
+                    <label>Product Name :</label>
+                    <input type="text" class="form-control" name="product" placeholder="Product Name"></input>
+                </div>
+                <div style="padding:15px 0px ">
+                    <label>Size Product :</label>
+                    <input type="text" class="form-control" name="size" placeholder="Size Product"> </input>
+                </div>
+                <a style="color:red; font-weight: 900; font-size:20px" href="download_logic.php" target="_blank" class="" name="link">Hyperlink</a>
                 <!-- <a href="after_download.php" target="_blank" class="" name="link" >Hyperlink</a><br>  -->
             </form>
 
