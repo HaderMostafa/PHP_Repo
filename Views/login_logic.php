@@ -107,7 +107,6 @@ if (isset($_POST['submit'])) {
                 $_SESSION['user_id'] = $id;
             }
 
-            $_SESSION['is_logged'] = true; //added for test
             header("Location:" . download_area_url); //changable
         } else {
             echo "fail";

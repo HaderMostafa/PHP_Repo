@@ -3,15 +3,16 @@
 session_start();
 require_once "../vendor/autoload.php";
 
-// $GLOBALS['flag'] = true;
+//test_without_it:
+use Illuminate\Database\Capsule\Manager as Database;
 
-//     echo $GLOBALS['flag'];
+//??
+// if (isset($_POST['link'])) {require_once 'download_logic.php';}
 
-$flag = true;
-$index = 1;
-// $_SESSION['flag2']=true;
-if (isset($_POST['link'])) {require_once 'download_logic.php';}
 
+$product = new ProductConnection; 
+$oldfname=$product-> get_data();
+ 
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +43,7 @@ if (isset($_POST['link'])) {require_once 'download_logic.php';}
             <form class="container" action="#" method="POST">
                 <input type="text" class="" name="product">Product Name</input><br>
                 <input type="text" class="" name="size">Size </input><br>
-                <a href="download_logic.php" target="_blank" class="" name="link">Hyperlink</a><br>
+                <a href="<?php  echo $oldfname.".php" ?>"  class="" name="link">Hyperlink</a><br>
                 <!-- <a href="after_download.php" target="_blank" class="" name="link" >Hyperlink</a><br>  -->
             </form>
 

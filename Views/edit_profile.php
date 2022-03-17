@@ -30,12 +30,12 @@ require_once 'edit_profile_logic.php';
                     <!-- email -->
                     <label for="email"> Edit Email :</label>
                     <input class="form-control" type="text"
-                        value="<?php if (isset($_POST['update'])) {echo $_SESSION['email'];}?>"
+                        value="<?php if(isset($_POST['update'])) {echo $_SESSION["email"];}?>"
                         placeholder="Edit Your Email " name="email">
                     <!-- error -->
                     <span class="error"><?php echo $emailErr; ?> </span></br>
                 </div>
-
+                <!-- <br /><b>Notice</b>:  Undefined index: email in <b>C:\xampp\htdocs\PHPinVisualStudioCode\Last_Version_hadeer\PHP_Repo\Views\edit_profile.php</b> on line <b>33</b><br /> -->
                 <div class="styleInput">
                     <!-- password -->
                     <label for="password">Edit password :</label>
