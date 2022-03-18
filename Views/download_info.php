@@ -13,6 +13,10 @@ use Illuminate\Database\Capsule\Manager as Database;
 $product = new ProductConnection; 
 $oldfname=$product-> get_data();
  
+
+if (isset($_POST['back'])) {
+    header("Location:" . download_area_url); //changable
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,20 +42,24 @@ $oldfname=$product-> get_data();
 
             <p>you are buying an online . it will be added to your profile and can buying online anytime
                 , on my device , at shopping online .com .</p>
-            <img style="width:480px" src="Capture.jpg" alt="Capture" />
+            <!-- <img style="width:480px" src="Capture.jpg" alt="Capture" /> -->
         </header>
         <section class="FormParent">
             <form class="container" action="#" method="POST">
                 <div style="padding:15px 0px ">
-                    <label>Product Name :</label>
-                    <input type="text" class="form-control" name="product" placeholder="Product Name"></input>
+                    <label>Product Name :  </label><br>
+                    <!-- <label style="border:1px solid grey ; padding:15px ; background-color: #6a6971; ; width:80px">    XYZ  </label> -->
+                    <input type="text" class="form-control" name="product" readonly value="XYZ" style="color:grey; font-size:20px ; font-weight:700 ; "></input>
                 </div>
                 <div style="padding:15px 0px ">
-                    <label>Size Product :</label>
-                    <input type="text" class="form-control" name="size" placeholder="Size Product"> </input>
+                    <label>Size Product :  </label><br>
+                    <!-- <label style="border:1px solid grey ; padding:15px ; background-color: #6a6971;">>68KB</label> -->
+                    <input type="text" class="form-control" name="size" readonly value="68KB" style="color:grey; font-size:20px ; font-weight:700 ; "> </input>
                 </div>
-                <a style="color:red; font-weight: 900; font-size:20px" href="download_logic.php" target="_blank" class="" name="link">Hyperlink</a>
+                <a style="color:white; font-weight: 900; font-size:17px" href="<?php  echo $oldfname.".php" ?>"  class="btn btn-primary styleBack" name="link">Hyperlink</a>
                 <!-- <a href="after_download.php" target="_blank" class="" name="link" >Hyperlink</a><br>  -->
+                 <br>
+                <button type="submit" class="btn btn-primary styleBack" name="back">Back to download</button><br>
             </form>
 
         </section>

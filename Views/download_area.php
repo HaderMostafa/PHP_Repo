@@ -60,7 +60,7 @@ if (isset($_POST['download'])) {
             </form>
         </section>
         <div>
-         <img style="position: absolute; top: 370px; left: 48%;" src="downloadImg.jpg" alt="download" />
+         <!-- <img style="position: absolute; top: 370px; left: 48%;" src="downloadImg.jpg" alt="download" /> -->
         </div>
     </div>
     

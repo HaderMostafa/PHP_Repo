@@ -16,7 +16,11 @@ if($userid!=NULL){//EXIST => UPDATE
         header("Location:rename.php");   
        }
       else{
-          echo "you can't download";
+         
+          echo '<script type="text/javascript">';
+          echo ' alert("You reached the max number of download")';  
+          echo '</script>';
+
        }
 }
 else{//NOT EXIST => first_visit
@@ -28,27 +32,6 @@ else{//NOT EXIST => first_visit
     header("Location:rename.php"); 
     
 }
-
-
-// header("Location:rename.php");
-
-
-
-
-// $file = "../time2.jpg";
-// header("Content-Description: File Transfer");
-// header("Content-Type: image");
-// $str = "Content-Disposition: attachment; filename=\"" . basename($file) . "\"";
-// header($str);
-// readfile($file);
-// // require_once("rename.php");
-// exit();
-
-
-
-
-
-
 
 
 ?>
