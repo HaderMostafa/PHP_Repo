@@ -78,29 +78,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $passwordEqual = "Please Re enter your password correctly";
         }
     }
-/*    **************************************************************validation hide
+
 //Credit Number Validation
-if (empty($_POST["creditCard"])) {
-$creditErr = "Please Enter valid credit number";
-} else {
-$creditNumber = test_input($_POST["creditCard"]);
-if (strlen($creditNumber) != CREDIT_NUM_LENGTH) {
-$creditErr = "Please Enter 16 number";
-}
-}
+    if (empty($_POST["creditCard"])) {
+        $creditErr = "Please Enter valid credit number";
+    } else {
+        $creditNumber = test_input($_POST["creditCard"]);
+        if (strlen($creditNumber) != CREDIT_NUM_LENGTH) {
+            $creditErr = "Please Enter 16 number";
+        }
+    }
 
 //Expiration Date Validation
-if (empty($_POST["expirationCard"])) {
-$expireErr = "Please Enter valid credit number";
-} else {
-$expireDate = test_input($_POST["expirationCard"]);
-$now = new DateTime('now');
-$currentDate = $now->format('Y-m-d H:i:s');
-if ($expireDate < $currentDate) {
-$expireErr = "Expired!";
-}
-}
- */
+    if (empty($_POST["expirationCard"])) {
+        $expireErr = "Please Enter valid credit number";
+    } else {
+        $expireDate = test_input($_POST["expirationCard"]);
+        $now = new DateTime('now');
+        $currentDate = $now->format('Y-m-d H:i:s');
+        if ($expireDate < $currentDate) {
+            $expireErr = "Expired!";
+        }
+    }
+
 }
 
 function test_input($data)

@@ -1,6 +1,8 @@
 <?php
-class ForceDownload{
-    public static function download(){
+class ForceDownload
+{
+    public static function download()
+    {
         $file = "../Resources/time2.jpg";
         header("Content-Description: File Transfer");
         header("Content-Type: image");
